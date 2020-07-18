@@ -13,7 +13,7 @@ import sys
 
 import matplotlib.pyplot as plt
 import pydicom
-import scipy.misc
+import imageio
 
 
 def convert_dcm_to_jpg(dcm_file, jpg_file):
@@ -27,7 +27,7 @@ def convert_dcm_to_jpg(dcm_file, jpg_file):
     print("Converting {} to {}".format(dcm_file, jpg_file))
     ds = pydicom.read_file(dcm_file)
     img = ds.pixel_array
-    scipy.misc.imsave(jpg_file, img)
+    imageio.imwrite(jpg_file, img)
 
 
 def convert_dcm_to_jpg_dir(dcm_dir, jpg_dir):
