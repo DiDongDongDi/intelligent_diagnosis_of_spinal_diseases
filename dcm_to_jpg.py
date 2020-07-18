@@ -40,7 +40,9 @@ def convert_dcm_to_jpg_dir(dcm_dir, jpg_dir):
         jpg_dir (str): jpg目录
     """
 
+    print("Copying dir ...")
     shutil.copytree(dcm_dir, jpg_dir)
+    print("Ready to convert ...")
     walk = os.walk(jpg_dir)
     for dir_path, __, file_names in walk:
         for file_name in file_names:
